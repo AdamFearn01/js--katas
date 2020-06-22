@@ -7,22 +7,23 @@
  */
 
 const isPallindrome = (word) => {
-    let middleIndex = (word.length / 2);
-    middleIndexAmmended = Math.ceil(middleIndex);
-    middleIndexAddOne = (middleIndexAmmended + 1);
-    firstHalf = (word.slice(0, middleIndexAmmended));
-    secondHalf = (word.slice(middleIndexAmmended));
-    secondHalfSplit = secondHalf.split("");
-    console.log(secondHalfSplit);
-    //counter = "";
-    for (let i = 0; i < secondHalfSplit.length; i++) {
-        let counter = secondHalfSplit[i];
-        return counter;
-        //secondHalfReverse = counter.join(" ")
-        //return secondHalfReverse;
-    }
-    console.log(counter);
-    if (firstHalf == counter) {
+    let middleIndex = Math.ceil(word.length / 2);
+    let middleIndexMinusOne = (middleIndex - 1);
+    let firstHalf = (word.slice(0, middleIndex));
+    let wordLength = word.length;
+    let originalSecondHalf = "";
+        if (wordLength % 2 != 0) {
+            let letters = (word.slice(middleIndexMinusOne));
+            originalSecondHalf += letters;
+        }
+        else {
+            let letters = (word.slice(middleIndex));
+            originalSecondHalf += letters;
+        }
+    let secondHalfSplit = originalSecondHalf.split("");
+    let reversedSecondHalf = secondHalfSplit.reverse();
+    let secondHalf = reversedSecondHalf.join("");
+    if (firstHalf == secondHalf) {
         console.log(true);
     }
     else {
@@ -30,3 +31,8 @@ const isPallindrome = (word) => {
     }
 }
 isPallindrome("hannah");
+isPallindrome("adam");
+isPallindrome("jacob");
+isPallindrome("emmanuel");
+isPallindrome("repaper");
+isPallindrome("mum");

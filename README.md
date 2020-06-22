@@ -1,2 +1,1 @@
-ukUsPhoneNumber and square files are now fully operational!
-pallindrome file added and nearly there!
+My pallindrome, square and ukUsPhoneNumber files are now fully operational!
